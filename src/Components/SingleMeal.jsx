@@ -5,6 +5,7 @@ function SingleMeal(prop) {
 
     function handleClick() {
         setCount((count) => count + 1)
+        prop.handleTotal()
     }
   return (
     <div className='singleMealCtn'>

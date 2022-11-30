@@ -1,5 +1,6 @@
 
 import './App.css';
+import CounterTotal from './Components/CounterTotal';
 import Meal from './Components/Meal';
 
 function App() {
