@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const meals = ["Vegetarian", "Vegan", "Halal", "Gluten-free", "Anything!"];
 
@@ -8,7 +9,8 @@ function Meal() {
       {meals.map((meal) => {
         return (
           <div className = "singleMealCtn">
-            <button className="button">{meal}</button>
+            <Button meal = {meal}>
+            </Button>
             <p>0</p>
           </div>
         );
