@@ -7,6 +7,10 @@ function SingleMeal(prop) {
         setCount((count) => count + 1)
         prop.handleTotal()
     }
+
+    function handleReset() {
+      setCount(0)
+    }
   return (
     <div className='singleMealCtn'>
       <button className="button" onClick={handleClick}>

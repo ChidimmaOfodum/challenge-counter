@@ -1,6 +1,7 @@
 import React, { useState }from "react";
 import CounterTotal from "./CounterTotal";
 import SingleMeal from "./SingleMeal";
+import Reset from "./Reset";
 
 const meals = ["Vegetarian", "Vegan", "Halal", "Gluten-free", "Anything!"];
 
@@ -10,6 +11,10 @@ function Meal() {
     function handleTotal() {
         setTotal((count) => count + 1)
     }
+
+    // function handleReset() {
+    //   setTotal(0)
+    // }
   return (
     <div>
       {meals.map((meal) => {
@@ -20,6 +25,8 @@ function Meal() {
         );
       })}
       <CounterTotal total = {total} />
+      <Reset />
+     
     </div>
   );
 }
