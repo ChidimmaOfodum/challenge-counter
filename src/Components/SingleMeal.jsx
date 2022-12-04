@@ -1,22 +1,12 @@
 import React, { useState } from 'react'
 
-function SingleMeal(prop) {
-    const [count, setCount] = useState(0);
-
-    function handleClick() {
-        setCount((count) => count + 1)
-        prop.handleTotal()
-    }
-
-    function handleReset() {
-      setCount(0)
-    }
+function SingleMeal(props){
   return (
     <div className='singleMealCtn'>
-      <button className="button" onClick={handleClick}>
-        {prop.meal}
+      <button className="button" onClick={props.onClick}>
+        {props.meal}
       </button>
-      <p>{count}</p>
+      <p>{props.count}</p>
     </div>
   );
 }
