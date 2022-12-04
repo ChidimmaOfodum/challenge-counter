@@ -12,19 +12,26 @@ const meals = {
   };
 
 function Meal() {
+  const [display, setDisplay] = useState(meals)
+
+  function handleDisplay(event) {
+    const mealId = event.currentTarget.id
+    setDisplay({...display, [mealId]: display[mealId] + 1})
+  }
     const [total, setTotal] = useState(0)
 
-    function handleTotal() {
-        setTotal((count) => count + 1)
-    }
+    // function handleTotal() {
+    //     setTotal((count) => count + 1)
+    // }
 
    
   return (
     <div>
-      {Object.keys(meals).map((meal) => {
+      {Object.keys(display).map((meal) => {
         return (
           <div >
-            <SingleMeal meal = {meal} count = {meals[meal]} handleTotal = {handleTotal} />
+            <SingleMeal meal = {meal} count = {display[meal]} onClick = {handleDisplay} 
+            id = {meal}/>
           </div>
         );
       })}
