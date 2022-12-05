@@ -14,17 +14,17 @@ const meals = {
 function Meal() {
   const [display, setDisplay] = useState(meals)
 
+  const [total, setTotal] = useState(0);
+
   function handleDisplay(event) {
     const mealId = event.currentTarget.id
     setDisplay({...display, [mealId]: display[mealId] + 1})
+    setTotal((total) => total + 1);
   }
-    const [total, setTotal] = useState(0)
 
-    // function handleTotal() {
-    //     setTotal((count) => count + 1)
-    // }
-
-   
+  function handleReset(){
+    setDisplay(meals)
+  }
   return (
     <div>
       {Object.keys(display).map((meal) => {
@@ -36,7 +36,7 @@ function Meal() {
         );
       })}
       <CounterTotal total = {total} />
-      <Reset />
+      <Reset onClick = {handleReset}/>
      
     </div>
   );

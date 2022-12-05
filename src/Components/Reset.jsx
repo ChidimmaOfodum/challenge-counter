@@ -3,7 +3,7 @@ import React from 'react'
 //     prop.setCount(0)
 // }
 function Reset(props) {
-    return <button>Reset</button>
+    return <button onClick = {props.onClick}>Reset</button>
 }
 
 export default Reset
